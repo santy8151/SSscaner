@@ -1,0 +1,14 @@
+.venv
+**/node_modules
+**/__pycache__
+**/dist
+.env*
+data/local
+backend
+frontend
+static
+AWS
+terraform
+artifacts
+promo
+.git

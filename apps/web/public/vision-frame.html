@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self' https://cdn.jsdelivr.net; style-src 'unsafe-inline'; connect-src https://teachablemachine.withgoogle.com https://storage.googleapis.com; img-src blob: data:; media-src blob:; worker-src blob:;"
+    />
+    <title>SSScanner · Visión</title>
+    <style>
+      body {
+        font: 14px system-ui;
+        background: #0c1917;
+        color: #e0efe9;
+        padding: 20px;
+        margin: 0;
+      }
+      label {
+        display: block;
+        margin: 10px 0;
+      }
+      input {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px;
+        background: #122922;
+        color: white;
+        border: 1px solid #3e6255;
+        border-radius: 6px;
+      }
+      button,
+      a {
+        display: inline-block;
+        border: 0;
+        border-radius: 6px;
+        padding: 10px 14px;
+        margin: 8px 8px 8px 0;
+        background: #80e7b9;
+        color: #0b2017;
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.4;
+        cursor: default;
+      }
+      small {
+        color: #a1bbaf;
+      }
+      video,
+      img {
+        max-width: 280px;
+        max-height: 200px;
+        border-radius: 10px;
+      }
+      #results {
+        margin-top: 12px;
+        display: grid;
+        gap: 8px;
+      }
+      progress {
+        width: 160px;
+        margin-left: 12px;
+      }
+      #status {
+        min-height: 20px;
+      }
+      a {
+        background: transparent;
+        color: #80e7b9;
+      }
+    </style>
+  </head>
+  <body>
+    <label
+      >URL del modelo exportado<input
+        id="url"
+        type="url"
+        placeholder="https://teachablemachine.withgoogle.com/models/ID/"
+    /></label>
+    <button id="load">Cargar modelo</button
+    ><a
+      href="https://teachablemachine.withgoogle.com/train/image"
+      target="_blank"
+      rel="noreferrer"
+      >Entrenar modelo ↗</a
+    >
+    <p id="status" role="status">Sin modelo. No hay clasificación activa.</p>
+    <button id="camera" disabled>Iniciar cámara</button
+    ><button id="stop" disabled>Detener cámara</button
+    ><label
+      >O probar una imagen local<input
+        id="file"
+        type="file"
+        accept="image/*"
+        disabled
+    /></label>
+    <video id="video" autoplay muted playsinline hidden></video
+    ><img id="photo" alt="Imagen local para clasificación" hidden />
+    <div id="results"></div>
+    <p>
+      <small
+        >Las puntuaciones son salidas del modelo, no probabilidades de avería
+        calibradas. Incluye una clase indeterminado y valida las condiciones de
+        iluminación. Los pesos se descargan de Google y las librerías de
+        jsDelivr al pulsar Cargar. Imágenes procesadas en este navegador.</small
+      >
+    </p>
+    <script src="/vision-frame.js"></script>
+  </body>
+</html>

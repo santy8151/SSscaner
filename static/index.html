@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SSSCANER | Diagnóstico eléctrico y A/C</title>
+  <meta name="description" content="Plataforma SSSCANER para diagnóstico automotriz con IA, MCP, telemetría y taller técnico." />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main id="auth" class="auth-shell">
+    <section class="brand-panel">
+      <div class="brand-topbar">
+        <div class="brand-mark">L</div>
+        <span>LasTrack.ITM</span>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">CENTRO DE OPERACIONES LOGÍSTICAS</p>
+        <h1>Resumen General</h1>
+        <p>Gestión de pedidos y entregas de última milla.</p>
+      </div>
+
+      <div class="car-scene" aria-hidden="true">
+        <div class="car-glow"></div>
+        <div class="car-silhouette">
+          <span class="wheel left"></span>
+          <span class="wheel right"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-card">
+      <div class="auth-headline">
+        <div class="brand-mark small">L</div>
+        <span>Plataforma logística</span>
+      </div>
+
+      <div class="auth-tabs" aria-label="Login y registro">
+        <button type="button" class="tab active" data-mode="login">Login</button>
+        <button type="button" class="tab" data-mode="register">Registro</button>
+      </div>
+
+      <form id="register-form" class="register-form">
+        <label>
+          Nombre completo
+          <input id="tech-name" name="name" required placeholder="Tu nombre" />
+        </label>
+        <label>
+          Correo electrónico
+          <input id="tech-email" name="email" type="email" required placeholder="usuario@empresa.com" />
+        </label>
+        <label>
+          Contraseña
+          <input id="tech-password" name="password" type="password" required placeholder="••••••••" />
+        </label>
+        <button type="submit" class="primary-btn">Entrar a la IA <span>→</span></button>
+      </form>
+
+      <small>Acceso seguro para supervisar operativa, entregas y diagnóstico inteligente.</small>
+    </section>
+  </main>
+
+  <main id="platform" class="app hidden">
+    <aside class="sidebar">
+      <div class="mini-logo"><span class="mini-mark">L</span> <b>LasTrack<span>.ITM</span></b></div>
+      <div class="status-pill"><i></i> Sistema operativo</div>
+
+      <nav class="nav-panel">
+        <button class="nav active" data-view="summary">◉ <span>Resumen</span></button>
+        <button class="nav" data-view="orders">◫ <span>Pedidos</span></button>
+        <button class="nav" data-view="clients">◌ <span>Clientes</span></button>
+        <button class="nav" data-view="inventory">▣ <span>Inventario</span></button>
+        <button class="nav" data-view="warehouses">▤ <span>Almacenes</span></button>
+        <button class="nav" data-view="deliveries">◍ <span>Entregas</span></button>
+        <button class="nav" data-view="routes">◎ <span>Rutas y tracking</span></button>
+        <button class="nav" data-view="incidents">△ <span>Incidencias</span></button>
+        <button class="nav" data-view="payments">◐ <span>Pagos</span></button>
+      </nav>
+
+      <div class="side-bottom">
+        <button id="diagram-btn" class="ghost-btn">☰ Canales de venta</button>
+        <div class="user-box">
+          <div class="avatar">JD</div>
+          <div>
+            <strong>Julián Díaz</strong>
+            <small>Administrador</small>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <section class="workspace">
+      <header class="topbar">
+        <div>
+          <p id="crumb" class="eyebrow muted-topbar">CENTRO DE OPERACIONES LOGÍSTICAS</p>
+          <h2 id="title">Resumen General</h2>
+        </div>
+
+        <div class="header-actions">
+          <button class="icon-btn" type="button">◌</button>
+          <button class="new-button" type="button">＋ Nuevo pedido</button>
+        </div>
+      </header>
+
+      <section class="summary-banner">
+        <div class="info-dot">◉</div>
+        <span>Modo demostración activo (Conecta el backend para ver base de datos en vivo).</span>
+      </section>
+
+      <div class="stats-grid">
+        <article class="mini-card">
+          <div class="mini-icon green">◍</div>
+          <div>
+            <h4>Pedidos totales</h4>
+            <strong>5</strong>
+            <small>+12% vs. ayer</small>
+          </div>
+        </article>
+        <article class="mini-card">
+          <div class="mini-icon blue">◌</div>
+          <div>
+            <h4>En ruta</h4>
+            <strong>1</strong>
+            <small>Seguimiento activo</small>
+          </div>
+        </article>
+        <article class="mini-card">
+          <div class="mini-icon teal">◉</div>
+          <div>
+            <h4>Entregados</h4>
+            <strong>1</strong>
+            <small>Últimas 24 horas</small>
+          </div>
+        </article>
+        <article class="mini-card">
+          <div class="mini-icon orange">◍</div>
+          <div>
+            <h4>Incidencias</h4>
+            <strong>0</strong>
+            <small>Requieren atención</small>
+          </div>
+        </article>
+      </div>
+
+      <div class="board-grid">
+        <section class="orders-panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow small-eyebrow">OPERACIÓN ACTUAL</p>
+              <h3>Pedidos en sistema</h3>
+            </div>
+            <div class="toolbar">
+              <input type="text" placeholder="Buscar pedido o cliente" />
+              <button type="button" class="secondary-btn light">Nuevo</button>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Pedido</th>
+                <th>Cliente</th>
+                <th>Estado</th>
+                <th>Total</th>
+                <th>Ubicación</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#00101</td>
+                <td>Laura Gómez</td>
+                <td><span class="chip chip-green">En ruta</span></td>
+                <td>$120.000</td>
+                <td>Calle 45 # 22-10, Medellín</td>
+                <td><select><option>En ruta</option></select></td>
+              </tr>
+              <tr>
+                <td>#00102</td>
+                <td>Carlos Restrepo</td>
+                <td><span class="chip chip-amber">En preparación</span></td>
+                <td>$350.000</td>
+                <td>Cra 70 # 12-45, Medellín</td>
+                <td><select><option>En preparación</option></select></td>
+              </tr>
+              <tr>
+                <td>#00103</td>
+                <td>Retai Moda S.A.S</td>
+                <td><span class="chip chip-green">Entregado</span></td>
+                <td>$1.450.000</td>
+                <td>Av El Poblado # 5-80, Medellín</td>
+                <td><select><option>Entregado</option></select></td>
+              </tr>
+              <tr>
+                <td>#00104</td>
+                <td>Tecnio Tenda Express</td>
+                <td><span class="chip chip-slate">Asignado</span></td>
+                <td>$800.000</td>
+                <td>Cll 10 # 43-21, Medellín</td>
+                <td><select><option>Asignado</option></select></td>
+              </tr>
+              <tr>
+                <td>#00105</td>
+                <td>Camiila Vargas</td>
+                <td><span class="chip chip-red">Pago pendiente</span></td>
+                <td>$210.000</td>
+                <td>Transversal 29 # 7-14, Medellín</td>
+                <td><select><option>Pago pendiente</option></select></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <aside class="map-panel">
+          <div class="section-head compact">
+            <div>
+              <p class="eyebrow small-eyebrow">EN TIEMPO REAL</p>
+              <h3>Red de entregas</h3>
+            </div>
+            <span class="live-pill">● LIVE</span>
+          </div>
+
+          <div class="map-surface">
+            <div class="map-pin pin-a">R-08</div>
+            <div class="map-pin pin-b">R-12</div>
+            <div class="map-pin pin-c">R-17</div>
+          </div>
+
+          <div class="map-stats">
+            <div>
+              <strong>1</strong>
+              <span>vehículos activos</span>
+            </div>
+            <div>
+              <strong>94%</strong>
+              <span>entregas a tiempo</span>
+            </div>
+          </div>
+
+          <button type="button" class="primary-btn full">Abrir mapa interactivo</button>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="modal" aria-modal="true">
+    <button type="button" class="close-btn" aria-label="Cerrar dialog">×</button>
+    <div id="modal-content"></div>
+  </dialog>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
+          <span class="live-badge">● EN VIVO</span>
+        </div>
+
+        <div class="gauges">
+          <div class="gauge gauge-blue">
+            <div class="gauge-figure"><b id="low-pressure">32.8</b><small>PSI</small></div>
+            <p>BAJA · Azul</p>
+          </div>
+          <div class="gauge gauge-red">
+            <div class="gauge-figure"><b id="high-pressure">226</b><small>PSI</small></div>
+            <p>ALTA · Rojo</p>
+          </div>
+          <div class="hose-panel">
+            <span class="line blue"></span>
+            <span class="line yellow"></span>
+            <span class="line red"></span>
+            <p>Mangueras: baja / servicio / alta</p>
+          </div>
+        </div>
+
+        <div class="lab-grid">
+          <article class="machine-card">
+            <div class="machine-icon">◉</div>
+            <b>Bomba de vacío</b>
+            <p>−29.4 inHg · Estabilidad 98%</p>
+            <button class="secondary-btn" type="button">Prueba de caída</button>
+          </article>
+
+          <article class="machine-card">
+            <div class="machine-icon">⇄</div>
+            <b>Estación automática</b>
+            <p>Recuperación · limpieza · carga</p>
+            <button class="secondary-btn" type="button">Ver ciclo</button>
+          </article>
+
+          <article class="scope-card">
+            <div class="scope-top">
+              <b>Osciloscopio digital</b>
+              <span>CH1 20V</span>
+            </div>
+            <svg viewBox="0 0 600 160" preserveAspectRatio="none" aria-label="Señal osciloscopio">
+              <polyline id="wave" points="0,90 12,70 24,100 36,42 48,108 60,90 72,69 84,103 96,44 108,110 120,86 132,70 144,104 156,45 168,109 180,89 192,70 204,102 216,44 228,108 240,88 252,71 264,103 276,43 288,110 300,89 312,70 324,103 336,44 348,108 360,90 372,70 384,102 396,45 408,109 420,88 432,70 444,104 456,43 468,109 480,90 492,70 504,103 516,44 528,108 540,88 552,70 564,103 576,44 588,108 600,89" />
+            </svg>
+            <p>Frecuencia dominante: <b>59.98 Hz</b> · Ruido: 1.8%</p>
+          </article>
+        </div>
+
+        <div class="network-panel">
+          <div>
+            <p class="eyebrow">APRENDIZAJE CONTINUO</p>
+            <h3>Red de inferencia calibrada</h3>
+            <p class="muted">La red sigue aprendiendo con cada sesión validada por técnico, sin intervenir sin supervisión.</p>
+          </div>
+
+          <div class="node-graph">
+            <span class="node"></span>
+            <span class="node"></span>
+            <span class="node"></span>
+            <span class="node"></span>
+            <span class="node"></span>
+            <span class="node"></span>
+            <span class="node"></span>
+          </div>
+
+          <div class="train-controls">
+            <label>
+              Épocas
+              <input id="epochs-input" type="number" value="120" min="1" max="5000" />
+            </label>
+            <label>
+              Nodo
+              <select id="node-select">
+                <option value="compressor">Compresor</option>
+                <option value="evaporator">Evaporador</option>
+                <option value="condenser">Condensador</option>
+                <option value="chiller">Chiller</option>
+                <option value="motor">Motor</option>
+              </select>
+            </label>
+            <label>
+              Algoritmo
+              <select id="algorithm-select">
+                <option value="decision_tree">Decision Tree</option>
+                <option value="linear_regression">Linear Regression</option>
+                <option value="bayesian_network">Bayesian Network</option>
+                <option value="mlp_neural_network">MLP Neural Network</option>
+              </select>
+            </label>
+            <button id="train-btn" class="primary-btn" type="button">Calibrar red</button>
+          </div>
+          <div id="training-result" class="training-result">Estado: lista para aprendizaje continuo.</div>
+        </div>
+      </section>
+
+      <section id="view-scan" class="view">
+        <div class="tool-card">
+          <p class="eyebrow">ESCANEO</p>
+          <h3>Consulta de DTC y live scan</h3>
+          <p class="muted">El sistema detecta códigos, valida la telemetría y los orienta a la sección correcta de diagnóstico.</p>
+          <button class="primary-btn" type="button" data-source="scan">Ejecutar escaneo</button>
+        </div>
+      </section>
+
+      <section id="view-frequency" class="view">
+        <div class="tool-card">
+          <p class="eyebrow">MEDIDA DE FRECUENCIA</p>
+          <h3>Osciloscopio y armónicos</h3>
+          <p class="muted">Se revisa el espectro de frecuencia para detectar desbalance, interferencia o picos anómalos.</p>
+          <button class="primary-btn" type="button" data-source="frequency">Analizar frecuencia</button>
+        </div>
+      </section>
+
+      <section id="view-ac" class="view">
+        <div class="tool-card">
+          <p class="eyebrow">MEDIDA A/C</p>
+          <h3>Presión y rendimiento térmico</h3>
+          <p class="muted">La información de baja, alta y temperatura se interpreta en contexto para priorizar la corrección más segura.</p>
+          <button class="primary-btn" type="button" data-source="ac">Medir A/C</button>
+        </div>
+      </section>
+
+      <section id="view-motor" class="view">
+        <div class="tool-card">
+          <p class="eyebrow">MEDIDA MOTOR</p>
+          <h3>Telemetría y degradación térmica</h3>
+          <p class="muted">Se compara la curva de voltaje y temperatura del motor para detectar estrés eléctrico o sobrecalentamiento.</p>
+          <button class="primary-btn" type="button" data-source="motor">Evaluar motor</button>
+        </div>
+      </section>
+
+      <section id="view-leak" class="view">
+        <div class="tool-card">
+          <p class="eyebrow">FUGA DE ENERGÍA</p>
+          <h3>Validación de pérdida de carga</h3>
+          <p class="muted">El análisis revisa caídas, continuidad y microfugas para localizar la zona comprometida.</p>
+          <button class="primary-btn" type="button" data-source="leak">Buscar fuga</button>
+        </div>
+      </section>
+
+      <section id="view-diagnosis" class="view">
+        <div class="tool-card diagnosis-layout">
+          <div>
+            <p class="eyebrow">DIAGNÓSTICO IA</p>
+            <h3>Recomendación con contexto técnico</h3>
+            <p id="diagnosis-summary" class="muted">Selecciona una medición del taller y envía los datos para obtener una recomendación orientada al caso.</p>
+          </div>
+          <div class="metric-row">
+            <article>
+              <small>Voltaje</small>
+              <b id="volt-readout">13.6 V</b>
+            </article>
+            <article>
+              <small>Frecuencia</small>
+              <b id="freq-readout">59.98 Hz</b>
+            </article>
+            <article>
+              <small>Confianza</small>
+              <b id="confidence-readout">92%</b>
+            </article>
+          </div>
+          <button id="send-diagnosis" class="primary-btn" type="button">Enviar datos a Diagnóstico IA →</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="modal" aria-modal="true">
+    <button type="button" class="close-btn" aria-label="Cerrar dialog">×</button>
+    <div id="modal-content"></div>
+  </dialog>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

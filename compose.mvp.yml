@@ -1,0 +1,45 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ssscanner
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Configura POSTGRES_PASSWORD en .env.mvp}
+      POSTGRES_DB: ssscanner
+    volumes:
+      - ssscanner-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ssscanner -d ssscanner"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  init-db:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile
+    environment:
+      DATABASE_URL: ${DATABASE_URL_DOCKER:?Configura DATABASE_URL_DOCKER en .env.mvp}
+    command: ["python", "-m", "scripts.manage", "init-db"]
+    depends_on:
+      db:
+        condition: service_healthy
+  api:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      APP_ENV: production
+      AUTO_CREATE_SCHEMA: "false"
+      DATABASE_URL: ${DATABASE_URL_DOCKER:?Configura DATABASE_URL_DOCKER en .env.mvp}
+      CORS_ORIGINS: http://localhost:8000
+    depends_on:
+      init-db:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/ready')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+volumes:
+  ssscanner-data:

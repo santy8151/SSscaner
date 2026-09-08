@@ -1,0 +1,9 @@
+[
+ {"title":"Conectemos la idea con la evidencia","focus":0,"speech":"Bueno, vamos a conectar el salva memorias y la interfaz de datos al módulo B T M G P A de Ssscaner. Son funciones distintas: alimentación y comunicación."},
+ {"title":"Una base de servicio. Nuevas capacidades.","focus":0,"speech":"La propuesta parte de un módulo de limpieza del sistema de refrigeración, ampliado con manómetros, osciloscopio y visión. Esta animación representa el concepto; la adaptación física debe documentarse."},
+ {"title":"Tres pantallas para un mismo diagnóstico","focus":1,"speech":"En la primera pantalla observamos presión y temperatura. En la segunda analizamos frecuencia y señales eléctricas. Así relacionamos el circuito térmico con el comportamiento de sus componentes."},
+ {"title":"Luces y carrocería: observar antes de concluir","focus":2,"speech":"La tercera pantalla reconoce estados de luces con un modelo entrenado en Teachable Machine. Ver una luz o un fusible no demuestra continuidad: necesitamos mediciones eléctricas para confirmar."},
+ {"title":"El técnico configura el análisis","focus":1,"speech":"Seleccionamos el compresor y ajustamos capas, nodos, batch size y learning rate. También podemos explorar Random Forest, K Means, PCA o detección de atípicos, según la pregunta técnica."},
+ {"title":"Motor y dinámica: comparar con método","focus":2,"speech":"Para estudiar el motor comparamos par, revoluciones y potencia bajo condiciones equivalentes. El agarre exige medir también neumáticos, superficie y dinámica. Más potencia no significa automáticamente mejor agarre."},
+ {"title":"Ssscaner BETA · construyamos la validación","focus":0,"speech":"La beta ya permite experimentar con datos sintéticos y guardar resultados. El siguiente paso es validar sensores y modelos en taller. Sin promesas de precisión ni reprogramación automática del vehículo."}
+]

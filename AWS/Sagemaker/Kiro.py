@@ -1,0 +1,1 @@
+configura kiro para poderlo utilizar en esta terminal via remoto esto de aw es solo configuracion para el fucturo pero no lo conectes de verdad sigueme ayudando a el visual y backend

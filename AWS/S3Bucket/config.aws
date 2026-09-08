@@ -1,0 +1,22 @@
+[default]
+region = us-east-1
+output = json
+aws_access_key_id = CHANGE_ME
+aws_secret_access_key = CHANGE_ME
+
+[ssscaner]
+bucket_name = ssscaner-diagnostics
+bucket_region = us-east-1
+storage_class = STANDARD
+log_prefix = diagnostics/
+
+[lambda]
+function_name = ssscaner-diagnostic-processor
+runtime = python3.11
+handler = pyhton.lambda_handler
+role_arn = arn:aws:iam::000000000000:role/ssscaner-lambda-role
+
+[monitoring]
+alert_email = admin@ssscaner.local
+max_age_days = 30
+encrypt = true

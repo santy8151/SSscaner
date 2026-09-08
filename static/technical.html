@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SSSCANER · Laboratorio técnico</title>
+  <link rel="stylesheet" href="/static/technical.css">
+  <script src="/static/technical.js" defer></script>
+</head>
+<body>
+<aside><a class="brand" href="/">SS<span>SCANER</span><small>TECHNICAL WORKSPACE</small></a><p class="eyebrow">ESTACIÓN DE TRABAJO</p><a class="active" href="#laboratorio">◈ Laboratorio técnico</a><a href="#informe">↗ Informe de medición</a><div class="aside-bottom"><span class="dot"></span> BETA · Entrada manual<p>Datos del técnico.<br>Resultados trazables.</p></div></aside>
+<main id="laboratorio">
+<header><span>TALLER / LABORATORIO</span><span id="api-status">Comprobando API…</span></header>
+<section class="hero"><div><p class="eyebrow">MENOS SUPOSICIONES. MÁS EVIDENCIA.</p><h1>Cada medición<br><em>cuenta una historia.</em></h1><p>Reúne los valores del vehículo, contrástalos con sus referencias y documenta el siguiente paso.</p></div><div class="scope" aria-hidden="true"><svg viewBox="0 0 320 160"><path d="M0 80H320M0 40H320M0 120H320M40 0V160M120 0V160M200 0V160M280 0V160" stroke="#25404c" fill="none"/><path d="M0 90 L35 90 L48 65 L62 116 L82 28 L102 132 L116 78 L136 90 L173 90 L186 64 L201 113 L220 31 L240 128 L257 78 L275 90 L320 90" stroke="#65efc4" stroke-width="3" fill="none"/></svg><small>VISUALIZACIÓN ILUSTRATIVA / SIN DISPOSITIVO</small></div></section>
+<div class="steps"><span><b>01</b> Identifica el vehículo</span><span><b>02</b> Registra y compara</span><span><b>03</b> Exporta la evidencia</span></div>
+<form id="measurement-form" class="panel">
+<div class="panel-title"><h2>Registro de mediciones</h2><span class="badge">COMPARACIÓN MANUAL</span></div>
+<div class="context"><label>Vehículo / orden de trabajo<input id="vehicle" required maxlength="200" placeholder="Ej. Mazda 3 · OT-1042"></label><label>Sistema<select id="source"><option value="ac">Aire acondicionado</option><option value="motor">Motor</option><option value="frequency">Frecuencia</option><option value="leak">Estanqueidad</option><option value="scan">Escáner</option></select></label></div>
+<p class="help">Introduce valores medidos y rangos del manual del fabricante para las mismas condiciones de prueba. No se precargan valores de ejemplo.</p>
+<div class="table-wrap"><table><thead><tr><th>Medición</th><th>Valor</th><th>Unidad</th><th>Mín. referencia</th><th>Máx. referencia</th><th></th></tr></thead><tbody id="rows"></tbody></table></div>
+<div class="actions"><button type="button" id="add-row" class="secondary">+ Añadir medición</button><button type="submit" id="submit">Comparar mediciones ↗</button></div>
+<p id="error" role="alert"></p>
+</form>
+<section id="informe" class="panel" aria-live="polite"><div class="panel-title"><h2>Informe técnico</h2><button id="export" class="secondary" disabled>Descargar JSON ↓</button></div><div id="result" class="empty">Tu evidencia comienza aquí.<p>Completa una medición para generar un informe.</p></div></section>
+<footer>SSSCANER BETA · Comparación numérica de lecturas introducidas manualmente. No establece la causa de una avería ni utiliza un modelo de IA validado. El informe se conserva en esta pestaña hasta recargar.</footer>
+</main></body></html>
