@@ -184,7 +184,7 @@ function MeasurementInput({ label, value, onChange, min, max, step = "1" }) {
 }
 
 function DiagnosticResult({ diagnostic }) {
-  const statusIcon = diagnostic.fault_detected ? '⚠️' : '✓'
+  const StatusIcon = diagnostic.fault_detected ? AlertTriangle : CheckCircle
   const statusColor = diagnostic.fault_detected ? 'text-ssscaner-warning' : 'text-ssscaner-success'
   const borderColor = diagnostic.fault_detected ? 'border-ssscaner-warning/50' : 'border-ssscaner-success/50'
 
@@ -192,7 +192,7 @@ function DiagnosticResult({ diagnostic }) {
     <div className={`bg-ssscaner-darker/50 border ${borderColor} rounded-lg p-3`}>
       <div className="flex items-start justify-between mb-2">
         <div className="flex items-center gap-2">
-          <span className="text-lg">{statusIcon}</span>
+          <StatusIcon className={`w-4 h-4 ${statusColor}`} />
           <p className={`font-semibold ${statusColor}`}>
             {diagnostic.node_id || 'Nodo Desconocido'}
           </p>

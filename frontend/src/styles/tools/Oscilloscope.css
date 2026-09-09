@@ -6,17 +6,18 @@
 
 .scope-card {
   padding: 18px;
-  background: #ffffff;
-  border: 1px solid rgba(7, 17, 15, 0.08);
+  background: #0c1016;
+  border: 1px solid rgba(46, 230, 255, 0.16);
   border-radius: 8px;
-  box-shadow: 0 14px 42px rgba(7, 17, 15, 0.05);
+  box-shadow: 0 14px 42px rgba(0, 0, 0, 0.3);
 }
 
 .scope-card h3 {
   margin: 0 0 14px;
-  color: #07110f;
+  color: #eef7ff;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 1rem;
-  font-weight: 950;
+  font-weight: 800;
 }
 
 .scope-controls {
@@ -30,19 +31,20 @@
 .scope-controls label {
   display: block;
   margin-bottom: 8px;
-  color: rgba(7, 17, 15, 0.56);
+  color: rgba(232, 244, 255, 0.52);
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.82rem;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .scope-controls input {
   width: 180px;
   min-height: 42px;
   padding: 0 12px;
-  color: #07110f;
-  background: #f7faf8;
-  border: 1px solid rgba(7, 17, 15, 0.12);
-  border-radius: 8px;
+  color: #eef7ff;
+  background: #05070a;
+  border: 1px solid rgba(46, 230, 255, 0.2);
+  border-radius: 6px;
   outline: none;
 }
 
@@ -50,29 +52,32 @@
 .scope-stop {
   min-height: 42px;
   padding: 0 14px;
-  border-radius: 8px;
+  border-radius: 6px;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 0.86rem;
-  font-weight: 900;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   cursor: pointer;
 }
 
 .scope-start {
-  color: #07110f;
-  background: linear-gradient(135deg, #66e3c4, #d8ff7a);
+  color: #05070a;
+  background: var(--volt-cyan);
   border: 0;
 }
 
 .scope-stop {
-  color: #fffaf4;
-  background: #b9402d;
+  color: #fff0f6;
+  background: var(--volt-magenta);
   border: 0;
 }
 
 .scope-chart {
   height: 315px;
   padding: 12px;
-  background: #f7faf8;
-  border: 1px solid rgba(7, 17, 15, 0.08);
+  background: #070a0e;
+  border: 1px solid rgba(46, 230, 255, 0.14);
   border-radius: 8px;
 }
 
@@ -80,7 +85,7 @@
   display: grid;
   place-items: center;
   height: 100%;
-  color: rgba(7, 17, 15, 0.46);
+  color: rgba(232, 244, 255, 0.42);
   font-size: 0.92rem;
   text-align: center;
 }
@@ -95,23 +100,25 @@
 .scope-stat {
   min-height: 78px;
   padding: 12px;
-  background: #f7faf8;
-  border: 1px solid rgba(7, 17, 15, 0.08);
+  background: #070a0e;
+  border: 1px solid rgba(46, 230, 255, 0.14);
   border-radius: 8px;
 }
 
 .scope-stat span,
 .scope-stat small {
   display: block;
-  color: rgba(7, 17, 15, 0.5);
+  color: rgba(232, 244, 255, 0.45);
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.76rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .scope-stat strong {
   display: block;
   margin: 4px 0 1px;
-  color: #07110f;
+  color: #eef7ff;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 1.35rem;
 }
 
@@ -126,7 +133,7 @@
   align-items: center;
   gap: 10px;
   min-height: 38px;
-  border-bottom: 1px solid rgba(7, 17, 15, 0.08);
+  border-bottom: 1px solid rgba(46, 230, 255, 0.12);
 }
 
 .freq-row:last-child,
@@ -137,7 +144,7 @@
 .freq-row span,
 .param-row span {
   width: 64px;
-  color: rgba(7, 17, 15, 0.56);
+  color: rgba(232, 244, 255, 0.52);
   font-size: 0.84rem;
 }
 
@@ -150,19 +157,20 @@
   flex: 1;
   height: 8px;
   overflow: hidden;
-  background: #e9eeeb;
+  background: rgba(232, 244, 255, 0.1);
   border-radius: 999px;
 }
 
 .freq-track div {
   height: 100%;
-  background: #128c7e;
+  background: var(--volt-cyan);
   border-radius: inherit;
 }
 
 .freq-row strong,
 .param-row strong {
-  color: #07110f;
+  color: #eef7ff;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.88rem;
 }
 

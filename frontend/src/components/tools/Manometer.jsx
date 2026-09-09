@@ -4,9 +4,9 @@ import '../../styles/tools/Manometer.css'
 export default function Manometer({ color, label, value, unit, min, max, active = false }) {
   const percentage = ((value - min) / (max - min)) * 100
   const colorMap = {
-    blue: '#128c7e',
-    yellow: '#b7791f',
-    red: '#b9402d'
+    blue: '#2ee6ff',
+    yellow: '#ffcc00',
+    red: '#ff2e88'
   }
 
   return (
@@ -30,7 +30,7 @@ export default function Manometer({ color, label, value, unit, min, max, active 
           <path
             d="M 30 100 A 70 70 0 0 1 170 100"
             fill="none"
-            stroke="rgba(7, 17, 15, 0.12)"
+            stroke="rgba(232, 244, 255, 0.12)"
             strokeWidth="8"
             strokeLinecap="round"
           />
@@ -55,10 +55,10 @@ export default function Manometer({ color, label, value, unit, min, max, active 
             strokeLinecap="round"
           />
 
-          <text x="30" y="120" fontSize="10" fill="rgba(7, 17, 15, 0.45)" textAnchor="start">
+          <text x="30" y="120" fontSize="10" fill="rgba(232, 244, 255, 0.4)" textAnchor="start">
             {min}
           </text>
-          <text x="170" y="120" fontSize="10" fill="rgba(7, 17, 15, 0.45)" textAnchor="end">
+          <text x="170" y="120" fontSize="10" fill="rgba(232, 244, 255, 0.4)" textAnchor="end">
             {max}
           </text>
         </svg>

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --volt-cyan: #2ee6ff;
+  --volt-amber: #ffcc00;
+  --volt-magenta: #ff2e88;
+  --volt-green: #39ff8c;
+  --grid-line: rgba(46, 230, 255, 0.08);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +19,16 @@
 body {
   @apply bg-ssscaner-darker text-white font-sans;
   overflow-x: hidden;
+  background-image:
+    linear-gradient(rgba(46, 230, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 230, 255, 0.05) 1px, transparent 1px);
+  background-size: 34px 34px;
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Rajdhani', system-ui, sans-serif;
+  letter-spacing: 0.01em;
 }
 
 html {
@@ -43,31 +61,42 @@ html {
 }
 
 .card {
-  @apply bg-ssscaner-dark border border-ssscaner-primary/20 rounded-lg p-4 hover:border-ssscaner-primary/50 transition-all;
+  @apply bg-ssscaner-dark border border-ssscaner-primary/20 rounded p-4 hover:border-ssscaner-primary/50 transition-all;
 }
 
 .btn-primary {
-  @apply px-4 py-2 bg-ssscaner-primary text-ssscaner-darker rounded-lg font-semibold hover:bg-ssscaner-accent transition-all;
+  @apply px-4 py-2 bg-ssscaner-primary text-ssscaner-darker rounded font-display font-bold uppercase tracking-wide hover:bg-ssscaner-accent hover:shadow-[0_0_0_1px_rgba(46,230,255,0.6),0_0_18px_rgba(46,230,255,0.35)] transition-all;
 }
 
 .btn-secondary {
-  @apply px-4 py-2 bg-ssscaner-secondary text-white rounded-lg font-semibold hover:bg-ssscaner-danger transition-all;
+  @apply px-4 py-2 bg-transparent text-ssscaner-secondary border border-ssscaner-secondary/60 rounded font-display font-bold uppercase tracking-wide hover:bg-ssscaner-secondary/10 transition-all;
 }
 
 .btn-ghost {
-  @apply px-4 py-2 border border-ssscaner-primary/50 text-ssscaner-primary rounded-lg font-semibold hover:bg-ssscaner-primary/10 transition-all;
+  @apply px-4 py-2 border border-ssscaner-primary/40 text-ssscaner-primary rounded font-display font-bold uppercase tracking-wide hover:bg-ssscaner-primary/10 transition-all;
 }
 
 .metric-box {
-  @apply bg-gradient-to-br from-ssscaner-primary/20 to-ssscaner-accent/20 border border-ssscaner-primary/30 rounded-lg p-6 backdrop-blur-sm;
+  @apply bg-ssscaner-dark border border-ssscaner-primary/25 rounded p-6 relative;
+}
+
+.metric-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 14px;
+  right: 14px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--volt-cyan), transparent);
+  opacity: 0.6;
 }
 
 .input-field {
-  @apply w-full px-4 py-2 bg-ssscaner-dark border border-ssscaner-primary/30 rounded-lg text-white focus:outline-none focus:border-ssscaner-primary transition-all;
+  @apply w-full px-4 py-2 bg-ssscaner-darker border border-ssscaner-primary/25 rounded text-white font-mono text-sm focus:outline-none focus:border-ssscaner-primary transition-all;
 }
 
 .input-field::placeholder {
-  @apply text-ssscaner-primary/50;
+  @apply text-ssscaner-primary/40;
 }
 
 .animate-pulse-glow {
@@ -76,10 +105,10 @@ html {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+    box-shadow: 0 0 4px rgba(46, 230, 255, 0.45);
   }
   50% {
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+    box-shadow: 0 0 16px rgba(46, 230, 255, 0.85);
   }
 }
 
