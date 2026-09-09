@@ -105,3 +105,5 @@ Fuentes OEM/licencias, perfiles aprobados versionados, reglas revisadas, manteni
 Siguiente bloque: verificar PostgreSQL/migraciones/aislamiento, ampliar ingestión y replay del simulador y obtener una ficha OEM autorizada para el primer flujo de aprobación técnica.
 
 [Arquitectura](ARCHITECTURE.md) · [Roadmap](ROADMAP.md) · [Datos](docs/architecture/DATABASE.md) · [API](docs/api/CONTRACTS.md) · [Simulación](docs/protocols/SIMULATION.md).
+
+Nootboklm:https://notebook.google.com/notebook/e736f0f5-09a6-4430-b999-917cc3daa72a?pli=1&authuser=4&pageId=none
