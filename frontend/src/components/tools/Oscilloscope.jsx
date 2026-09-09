@@ -48,14 +48,14 @@ export default function Oscilloscope() {
           {data.length > 0 ? (
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={data}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(7, 17, 15, 0.08)" />
-                <XAxis dataKey="x" stroke="rgba(7, 17, 15, 0.45)" tick={{ fontSize: 12 }} />
-                <YAxis stroke="rgba(7, 17, 15, 0.45)" tick={{ fontSize: 12 }} domain={[200, 260]} />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(46, 230, 255, 0.1)" />
+                <XAxis dataKey="x" stroke="rgba(232, 244, 255, 0.4)" tick={{ fontSize: 12 }} />
+                <YAxis stroke="rgba(232, 244, 255, 0.4)" tick={{ fontSize: 12 }} domain={[200, 260]} />
                 <Tooltip
-                  contentStyle={{ backgroundColor: '#ffffff', border: '1px solid rgba(7, 17, 15, 0.12)', color: '#07110f' }}
-                  labelStyle={{ color: '#07110f' }}
+                  contentStyle={{ backgroundColor: '#0c1016', border: '1px solid rgba(46, 230, 255, 0.24)', color: '#eef7ff' }}
+                  labelStyle={{ color: '#eef7ff' }}
                 />
-                <Line type="monotone" dataKey="y" stroke="#128c7e" dot={false} isAnimationActive={false} strokeWidth={2} />
+                <Line type="monotone" dataKey="y" stroke="#2ee6ff" dot={false} isAnimationActive={false} strokeWidth={2} />
               </LineChart>
             </ResponsiveContainer>
           ) : (

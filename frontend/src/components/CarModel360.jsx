@@ -22,23 +22,23 @@ export default function CarModel360() {
     scene.add(car)
 
     const bodyMaterial = new THREE.MeshStandardMaterial({
-      color: '#eef4f1',
-      metalness: 0.48,
-      roughness: 0.24,
+      color: '#1c222b',
+      metalness: 0.6,
+      roughness: 0.22,
     })
-    const lowerMaterial = new THREE.MeshStandardMaterial({ color: '#d9e2de', metalness: 0.36, roughness: 0.3 })
+    const lowerMaterial = new THREE.MeshStandardMaterial({ color: '#12161d', metalness: 0.42, roughness: 0.32 })
     const glassMaterial = new THREE.MeshStandardMaterial({
-      color: '#152d34',
-      metalness: 0.2,
-      roughness: 0.12,
+      color: '#0d2630',
+      metalness: 0.25,
+      roughness: 0.1,
       transparent: true,
       opacity: 0.84,
     })
-    const tireMaterial = new THREE.MeshStandardMaterial({ color: '#111816', metalness: 0.12, roughness: 0.58 })
-    const rimMaterial = new THREE.MeshStandardMaterial({ color: '#c8d3cf', metalness: 0.7, roughness: 0.22 })
-    const lightMaterial = new THREE.MeshStandardMaterial({ color: '#d8ff7a', emissive: '#d8ff7a', emissiveIntensity: 1.4 })
-    const tailMaterial = new THREE.MeshStandardMaterial({ color: '#f26b3a', emissive: '#f26b3a', emissiveIntensity: 0.9 })
-    const trimMaterial = new THREE.MeshStandardMaterial({ color: '#17201d', metalness: 0.28, roughness: 0.42 })
+    const tireMaterial = new THREE.MeshStandardMaterial({ color: '#0a0d10', metalness: 0.12, roughness: 0.58 })
+    const rimMaterial = new THREE.MeshStandardMaterial({ color: '#8fa3ad', metalness: 0.75, roughness: 0.2 })
+    const lightMaterial = new THREE.MeshStandardMaterial({ color: '#2ee6ff', emissive: '#2ee6ff', emissiveIntensity: 1.4 })
+    const tailMaterial = new THREE.MeshStandardMaterial({ color: '#ff2e88', emissive: '#ff2e88', emissiveIntensity: 0.9 })
+    const trimMaterial = new THREE.MeshStandardMaterial({ color: '#0d1015', metalness: 0.3, roughness: 0.42 })
 
     const body = new THREE.Mesh(createSedanBodyGeometry(), bodyMaterial)
     body.position.set(0, 0.08, -0.64)
@@ -117,17 +117,17 @@ export default function CarModel360() {
 
     const floor = new THREE.Mesh(
       new THREE.CircleGeometry(2.25, 72),
-      new THREE.MeshBasicMaterial({ color: '#66e3c4', transparent: true, opacity: 0.08 })
+      new THREE.MeshBasicMaterial({ color: '#2ee6ff', transparent: true, opacity: 0.09 })
     )
     floor.rotation.x = -Math.PI / 2
     floor.position.y = -0.05
     scene.add(floor)
 
-    scene.add(new THREE.AmbientLight('#ffffff', 1.2))
-    const keyLight = new THREE.DirectionalLight('#ffffff', 2.2)
+    scene.add(new THREE.AmbientLight('#4a6b78', 1.1))
+    const keyLight = new THREE.DirectionalLight('#e8f4ff', 2.2)
     keyLight.position.set(3, 4, 4)
     scene.add(keyLight)
-    const rimLight = new THREE.DirectionalLight('#66e3c4', 1.6)
+    const rimLight = new THREE.DirectionalLight('#2ee6ff', 1.8)
     rimLight.position.set(-3, 2, -4)
     scene.add(rimLight)
 

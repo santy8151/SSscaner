@@ -3,9 +3,9 @@
   flex: 0 0 292px;
   display: flex;
   flex-direction: column;
-  background: #10231f;
-  border-right: 1px solid rgba(102, 227, 196, 0.18);
-  box-shadow: 18px 0 60px rgba(0, 0, 0, 0.2);
+  background: #0a0e13;
+  border-right: 1px solid rgba(46, 230, 255, 0.16);
+  box-shadow: 18px 0 60px rgba(0, 0, 0, 0.45);
   transition: transform 0.3s ease;
 }
 
@@ -15,7 +15,7 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 22px 18px;
-  border-bottom: 1px solid rgba(248, 255, 251, 0.08);
+  border-bottom: 1px solid rgba(46, 230, 255, 0.14);
 }
 
 .logo-section {
@@ -31,15 +31,16 @@
   width: 44px;
   height: 44px;
   flex: 0 0 44px;
-  color: #07110f;
-  background: linear-gradient(135deg, #66e3c4, #d8ff7a);
+  color: #05070a;
+  background: var(--volt-cyan);
   border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(46, 230, 255, 0.5), 0 0 22px rgba(46, 230, 255, 0.4);
 }
 
 .close-button {
   display: grid;
   place-items: center;
-  color: #defdf2;
+  color: rgba(232, 244, 255, 0.7);
   background: transparent;
   border: 0;
   cursor: pointer;
@@ -58,9 +59,10 @@
 
 .nav-section-title {
   padding: 0 10px 8px;
-  color: rgba(222, 253, 242, 0.5);
+  color: rgba(232, 244, 255, 0.4);
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.72rem;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -74,19 +76,19 @@
   width: 100%;
   min-height: 62px;
   padding: 10px 12px;
-  color: rgba(222, 253, 242, 0.74);
+  color: rgba(232, 244, 255, 0.68);
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .nav-item:hover:not(.locked),
 .nav-item.active {
-  color: #f8fffb;
-  background: rgba(102, 227, 196, 0.13);
-  border-color: rgba(102, 227, 196, 0.24);
+  color: #eef7ff;
+  background: rgba(46, 230, 255, 0.08);
+  border-color: rgba(46, 230, 255, 0.26);
 }
 
 .nav-item.active::before {
@@ -96,12 +98,13 @@
   top: 12px;
   bottom: 12px;
   width: 3px;
-  background: #d8ff7a;
+  background: var(--volt-cyan);
   border-radius: 999px;
+  box-shadow: 0 0 10px rgba(46, 230, 255, 0.7);
 }
 
 .nav-item.locked {
-  color: rgba(222, 253, 242, 0.34);
+  color: rgba(232, 244, 255, 0.28);
   cursor: not-allowed;
 }
 
@@ -131,12 +134,13 @@
 }
 
 .nav-item-label {
-  font-size: 0.92rem;
-  font-weight: 800;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.94rem;
+  font-weight: 700;
 }
 
 .nav-item-desc {
-  color: rgba(222, 253, 242, 0.46);
+  color: rgba(232, 244, 255, 0.4);
   font-size: 0.74rem;
 }
 
@@ -144,17 +148,18 @@
   display: grid;
   gap: 12px;
   padding: 16px;
-  border-top: 1px solid rgba(248, 255, 251, 0.08);
+  border-top: 1px solid rgba(46, 230, 255, 0.14);
 }
 
 .workspace-card {
   display: grid;
   gap: 10px;
   padding: 10px;
-  color: rgba(248, 255, 251, 0.72);
-  background: rgba(248, 255, 251, 0.07);
-  border: 1px solid rgba(248, 255, 251, 0.1);
-  border-radius: 8px;
+  color: rgba(232, 244, 255, 0.66);
+  background: rgba(46, 230, 255, 0.04);
+  border: 1px solid rgba(46, 230, 255, 0.14);
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.78rem;
 }
 
@@ -162,8 +167,8 @@
   display: grid;
   gap: 6px;
   padding: 8px;
-  background: rgba(7, 17, 15, 0.28);
-  border: 1px solid rgba(102, 227, 196, 0.12);
+  background: rgba(5, 7, 10, 0.5);
+  border: 1px solid rgba(46, 230, 255, 0.14);
   border-radius: 8px;
 }
 
@@ -175,8 +180,8 @@
   cursor: grab;
   touch-action: none;
   background:
-    radial-gradient(circle at 50% 68%, rgba(102, 227, 196, 0.2), transparent 48%),
-    linear-gradient(180deg, rgba(222, 253, 242, 0.06), rgba(7, 17, 15, 0.16));
+    radial-gradient(circle at 50% 68%, rgba(46, 230, 255, 0.18), transparent 48%),
+    linear-gradient(180deg, rgba(46, 230, 255, 0.05), rgba(5, 7, 10, 0.2));
   border-radius: 6px;
 }
 
@@ -198,14 +203,15 @@
 }
 
 .car-model-caption strong {
-  color: #f8fffb;
+  color: #eef7ff;
   font-size: 0.76rem;
 }
 
 .car-model-caption span {
-  color: rgba(222, 253, 242, 0.55);
+  color: rgba(232, 244, 255, 0.45);
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.68rem;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .workspace-card-header,
@@ -218,12 +224,12 @@
 
 .workspace-card-header span,
 .workspace-status span {
-  color: rgba(222, 253, 242, 0.58);
+  color: rgba(232, 244, 255, 0.5);
 }
 
 .workspace-card-header strong,
 .workspace-status strong {
-  color: #d8ff7a;
+  color: var(--volt-amber);
 }
 
 .workspace-connections {
@@ -234,17 +240,18 @@
 
 .workspace-connections span {
   padding: 4px 7px;
-  color: #defdf2;
-  background: rgba(102, 227, 196, 0.12);
-  border: 1px solid rgba(102, 227, 196, 0.16);
+  color: var(--volt-cyan);
+  background: rgba(46, 230, 255, 0.1);
+  border: 1px solid rgba(46, 230, 255, 0.2);
   border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.68rem;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .workspace-status {
   padding-top: 8px;
-  border-top: 1px solid rgba(248, 255, 251, 0.08);
+  border-top: 1px solid rgba(46, 230, 255, 0.14);
 }
 
 .btn-logout {
@@ -254,16 +261,21 @@
   gap: 8px;
   width: 100%;
   min-height: 44px;
-  color: #fffaf4;
-  background: rgba(242, 107, 58, 0.16);
-  border: 1px solid rgba(242, 107, 58, 0.36);
-  border-radius: 8px;
-  font-weight: 900;
+  color: #ffd6e6;
+  background: rgba(255, 46, 136, 0.12);
+  border: 1px solid rgba(255, 46, 136, 0.38);
+  border-radius: 6px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-logout:hover {
-  background: rgba(242, 107, 58, 0.24);
+  background: rgba(255, 46, 136, 0.2);
+  box-shadow: 0 0 16px rgba(255, 46, 136, 0.25);
 }
 
 .sidebar-overlay {
@@ -288,7 +300,7 @@
     inset: 0;
     z-index: 999;
     display: block;
-    background: rgba(7, 17, 15, 0.72);
+    background: rgba(5, 7, 10, 0.78);
     backdrop-filter: blur(6px);
   }
 }
